@@ -9,6 +9,7 @@ const color = {
   primary: '#1DB954',
   white: '#FFF',
   black: '#000',
+  darkgrey: '#605A5A',
 };
 
 const gutter = {

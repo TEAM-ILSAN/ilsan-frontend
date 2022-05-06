@@ -6,6 +6,8 @@ import Main from './pages/Main';
 import baseTheme from './styles/baseTheme';
 import './styles/globals.css';
 import GlobalStyles from './styles/globalStyles';
+import NavBar from '@/components/common/NavBar';
+
 function RootWithCallbackAfterRender() {
   useEffect(() => {
     console.log('rendered');
@@ -16,6 +18,7 @@ function RootWithCallbackAfterRender() {
       <GlobalStyles />
       <ThemeProvider theme={baseTheme}>
         <RecoilRoot>
+          <NavBar />
           <Main />
         </RecoilRoot>
       </ThemeProvider>
