@@ -1,12 +1,12 @@
 import React from 'react';
 import CommonTitle from '@/components/common/Title';
 
-function Main() {
+function ChatRoom() {
   return (
     <div>
-      <CommonTitle>Moiza Frontend</CommonTitle>
+      <CommonTitle>채팅방 화면</CommonTitle>
     </div>
   );
 }
 
-export default Main;
+export default ChatRoom;

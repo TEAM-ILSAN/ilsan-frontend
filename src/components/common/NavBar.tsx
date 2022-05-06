@@ -5,7 +5,7 @@ import HamburgerIcon from '@/assets/hamburger.svg';
 import ChatIcon from '@/assets/chat.svg';
 import MyPageIcon from '@/assets/mypage.svg';
 
-const NavBar = () => {
+const NavBar = (): JSX.Element => {
   return (
     <StyledNavBar>
       <HomeIcon />
@@ -17,6 +17,7 @@ const NavBar = () => {
 };
 
 const StyledNavBar = styled.div`
+  z-index: 1000;
   position: fixed;
   bottom: 0;
   display: flex;
