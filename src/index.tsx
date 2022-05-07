@@ -6,7 +6,7 @@ import baseTheme from './styles/baseTheme';
 import './styles/globals.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyles from './styles/globalStyles';
-import NavBar from '@/components/common/NavBar';
+import NavBar from '@/components/Navigation/NavBar';
 import Main from './pages/Main';
 import ChatRoom from './pages/ChatRoom';
 

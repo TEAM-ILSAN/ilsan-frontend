@@ -1,5 +1,5 @@
 import React from 'react';
-import CommonTitle from '@/components/common/Title';
+import CommonTitle from '@/components/Typography/Title';
 
 function ChatRoom() {
   return (
