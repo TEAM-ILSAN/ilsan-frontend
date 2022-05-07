@@ -1,4 +1,5 @@
 import '@emotion/react';
+import { PropsWithChildren } from 'react';
 
 declare module '@emotion/react' {
   export interface Theme {
