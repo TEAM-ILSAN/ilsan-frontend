@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '@emotion/react';
 import baseTheme from './styles/baseTheme';
 import './styles/globals.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

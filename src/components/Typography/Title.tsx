@@ -1,5 +1,5 @@
 import React, { ReactChild } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Title = ({ children }: { children: ReactChild }): JSX.Element => {
   return <StyledTitle>{children}</StyledTitle>;

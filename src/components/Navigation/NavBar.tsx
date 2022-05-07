@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+
 import HomeIcon from '@/assets/home.svg';
 import HamburgerIcon from '@/assets/hamburger.svg';
 import ChatIcon from '@/assets/chat.svg';
