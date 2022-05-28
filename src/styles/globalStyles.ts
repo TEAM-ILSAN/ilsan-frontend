@@ -1,8 +1,4 @@
 export const GlobalStyles = `
-  .react-modal-sheet-parent {
-    z-index: 900 !important;
-  }
-
   * {
     box-sizing: border-box;
     word-wrap: break-word;

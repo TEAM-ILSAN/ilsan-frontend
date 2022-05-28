@@ -12,14 +12,6 @@ const Home = () => {
   const [snapIndex, setSnapIndex] = useState<number>(1);
 
   useEffect(() => {
-    const sheetContainer = document.querySelector('.react-modal-sheet-container');
-    const parent = sheetContainer.parentElement;
-
-    // MEMO: className to override z-index at global style.
-    parent.className = 'react-modal-sheet-parent';
-  }, []);
-
-  useEffect(() => {
     console.log('snapTo');
   }, [snapTo]);
 
@@ -27,7 +19,7 @@ const Home = () => {
     <Container>
       <BaseLayer />
 
-      <Sheet
+      <ParentSheet
         isOpen={isOpen}
         onClose={() => setIsOpen(true)}
         snapPoints={snapPoints}
@@ -40,12 +32,16 @@ const Home = () => {
           </Sheet.Header>
           <Sheet.Content>브ㄹㅏㅡ라</Sheet.Content>
         </Sheet.Container>
-      </Sheet>
+      </ParentSheet>
     </Container>
   );
 };
 
 export default Home;
+
+const ParentSheet = styled(Sheet)`
+  z-index: 900 !important;
+`;
 
 const Container = styled.div`
   width: 390px;
