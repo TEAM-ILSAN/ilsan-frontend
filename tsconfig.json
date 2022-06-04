@@ -18,6 +18,7 @@
       "@/types/*": ["src/types/*"],
       "@/atoms/*": ["src/atoms/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/socket/*": ["src/socket/*"],
       "@/constants/*": ["src/constants/*"],
       "@/assets/*": ["public/assets/*"]
     }

@@ -1,9 +1,12 @@
 import React, { FormEvent, useState } from 'react';
+import { io } from '@/socket/server.js';
 import styled from '@emotion/styled';
 import CommonTitle from '@/components/Typography/Title';
 import ChatRoomRow from '@/components/ChatRoom/ChatRoomRow';
 import Layout from '@/components/Layout';
 import ChatForm from '@/components/ChatRoom/ChatForm';
+
+const socket = io();
 
 function ChatRoom() {
   const [inputVal, setInputVal] = useState('');
@@ -11,9 +14,14 @@ function ChatRoom() {
     setInputVal(currentTarget.value);
   };
 
+  const initInput = () => {
+    setInputVal('');
+  };
+
   const submitHandler = (event: FormEvent) => {
     console.log('event', event);
     event.preventDefault();
+    initInput();
   };
 
   return (
