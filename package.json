@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.config.prod.js",
     "start": "webpack serve --config webpack.config.dev.js --mode development",
     "server": "node ./src/socket/server",
-    "dev:server": "nodemon server"
+    "dev:server": "node-dev ./src/socket/server"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +31,7 @@
     "express": "^4.18.1",
     "html-webpack-plugin": "^5.5.0",
     "moment": "^2.29.3",
+    "node-dev": "^7.4.3",
     "prettier": "^2.6.2",
     "react-query": "^3.38.0",
     "react-router-dom": "^6.3.0",
