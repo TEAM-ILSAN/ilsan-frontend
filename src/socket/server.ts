@@ -1,13 +1,39 @@
 const path = require('path');
-const http = require('http');
 const express = require('express');
-const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users');
 
+const { createServer } = require('http');
+const { Server } = require('socket.io');
+
 const app = express();
-const server = http.createServer(app);
-const io = socketio(server);
+const httpServer = createServer(app);
+
+interface ServerToClientEvents {
+  message: () => void;
+  roomUsers: () => void;
+}
+
+interface ClientToServerEvents {
+  message: () => void;
+  roomUsers: () => void;
+}
+
+interface InterServerEvents {
+  ping: () => void;
+}
+
+interface SocketData {
+  name: string;
+  age: number;
+}
+
+const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(httpServer, {
+  /* options */
+});
+
+// const server = http.createServer(app);
+// const io = socketio(server);
 const botName = 'ChatBot';
 
 // Set static folder
@@ -55,4 +81,4 @@ io.on('connection', (socket) => {
 });
 
 const PORT = 3000 || process.env.PORT;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}... `));
+httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}... `));
