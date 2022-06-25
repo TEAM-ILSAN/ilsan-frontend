@@ -1370,10 +1370,10 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
   "version" "1.3.2"
 
-"@types/node@*", "@types/node@>=10.0.0":
-  "integrity" "sha512-wANk6fBrUwdpY4isjWrKTufkrXdu1D2YHCot2fD/DfWxF5sMrVSA+KN7ydckvaTCh0HiqX9IVl0L5/ZoXg5M7w=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-17.0.25.tgz"
-  "version" "17.0.25"
+"@types/node@*", "@types/node@^16.11.41", "@types/node@>=10.0.0":
+  "integrity" "sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.41.tgz"
+  "version" "16.11.41"
 
 "@types/parse-json@^4.0.0":
   "integrity" "sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA=="

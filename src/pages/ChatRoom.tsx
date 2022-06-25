@@ -4,6 +4,8 @@ import CommonTitle from '@/components/Typography/Title';
 import ChatRoomRow from '@/components/ChatRoom/ChatRoomRow';
 import Layout from '@/components/Layout';
 import ChatForm from '@/components/ChatRoom/ChatForm';
+import { io, Socket } from 'socket.io-client';
+const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io();
 
 function ChatRoom() {
   const [inputVal, setInputVal] = useState('');
