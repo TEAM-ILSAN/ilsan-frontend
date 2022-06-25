@@ -1,29 +1,33 @@
 import path from 'path';
-import express from 'express';
-import { formatMessage } from './utils/messages';
-import { userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
+import express, { Application } from 'express';
+import { formatMessage, Message } from './utils/messages';
+import { User, userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
 
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 
-const app: Express.Application = express();
+const app: Application = express();
 const httpServer = createServer(app);
 
 interface ServerToClientEvents {
-  message: () => void;
-  roomUsers: () => void;
+  message: (message: Message) => void;
+  roomUsers: ({ room, users }: { room: string; users: User[] }) => void;
 }
 
 interface ClientToServerEvents {
-  message: () => void;
-  roomUsers: () => void;
+  message: (message: Message) => void;
+  joinRoom: ({ username, room }: { username: string; room: string }) => void;
+  chatMessage: (msg: string) => void;
 }
 
 interface InterServerEvents {
+  // MEMO: mock data
   ping: () => void;
 }
 
 interface SocketData {
+  // MEMO: mock data
+  id: number;
   name: string;
   age: number;
 }
@@ -41,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Run when client connets
 io.on('connection', (socket) => {
-  socket.on('joinRoom', ({ username, room }) => {
+  socket.on('joinRoom', ({ username, room }: { username: string; room: string }) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
@@ -59,7 +63,7 @@ io.on('connection', (socket) => {
   });
 
   // Listen for chat message
-  socket.on('chatMessage', (msg) => {
+  socket.on('chatMessage', (msg: string) => {
     const user = getCurrentUser(socket.id);
 
     // Send message to client side
