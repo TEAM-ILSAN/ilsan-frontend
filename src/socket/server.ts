@@ -1,12 +1,12 @@
-const path = require('path');
-const express = require('express');
-const formatMessage = require('./utils/messages');
-const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users');
+import path from 'path';
+import express from 'express';
+import { formatMessage } from './utils/messages';
+import { userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
 
-const { createServer } = require('http');
-const { Server } = require('socket.io');
+import { createServer } from 'http';
+import { Server } from 'socket.io';
 
-const app = express();
+const app: Express.Application = express();
 const httpServer = createServer(app);
 
 interface ServerToClientEvents {

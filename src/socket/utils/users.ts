@@ -1,17 +1,23 @@
-const users = [];
+interface User {
+  id: number;
+  username: string;
+  room: string;
+}
+
+const users: User[] = [];
 
 // Join user to the room
-function userJoin(id, username, room) {
+function userJoin(id: number, username: string, room: string) {
   const user = { id, username, room };
   users.push(user);
   return user;
 }
 
-function getCurrentUser(id) {
+function getCurrentUser(id: number) {
   return users.find((user) => user.id === id);
 }
 
-function userLeave(id) {
+function userLeave(id: number) {
   const index = users.findIndex((user) => user.id === id);
 
   if (index !== -1) {
@@ -19,13 +25,8 @@ function userLeave(id) {
   }
 }
 
-function getRoomUsers(room) {
+function getRoomUsers(room: string) {
   return users.filter((user) => user.room === room);
 }
 
-module.exports = {
-  userJoin,
-  getCurrentUser,
-  userLeave,
-  getRoomUsers,
-};
+export { userJoin, getCurrentUser, userLeave, getRoomUsers };
