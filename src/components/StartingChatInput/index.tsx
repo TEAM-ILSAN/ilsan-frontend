@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { ChangeEventHandler, MouseEventHandler } from 'react';
+import { ChangeEventHandler, MouseEventHandler, useEffect, useRef } from 'react';
 
 interface StartingChatInputProps {
   type?: string;
@@ -10,6 +10,7 @@ interface StartingChatInputProps {
   readOnly?: boolean;
   isValid?: boolean;
   isSelectable?: boolean;
+  isFocused?: boolean;
   onClick?: MouseEventHandler<HTMLInputElement>;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
@@ -28,12 +29,22 @@ const StartingChatInput = ({
   readOnly,
   isValid,
   isSelectable,
+  isFocused,
   onClick,
   onChange,
 }: StartingChatInputProps) => {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (!isFocused) return;
+
+    inputRef.current.focus();
+  }, []);
+
   return (
     <Container>
       <Input
+        ref={inputRef}
         type={type}
         id={id}
         value={value}
