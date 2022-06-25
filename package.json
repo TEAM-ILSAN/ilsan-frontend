@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js",
     "start": "webpack serve --config webpack.config.dev.js --mode development",
-    "server": "node ./src/socket/server",
-    "dev:server": "node-dev ./src/socket/server"
+    "server": "node ./src/socket/server.ts",
+    "dev:server": "node-dev ./src/socket/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +42,7 @@
     "socket.io-client": "^4.5.1",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.8",
+    "ts-node": "^10.8.1",
     "tslint": "^6.1.3",
     "typescript": "^4.6.3",
     "webpack": "^5.71.0",

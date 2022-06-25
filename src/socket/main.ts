@@ -5,13 +5,18 @@ import { User } from './utils/users';
 
 const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io();
 
-const chatForm: HTMLInputElement = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 
 // GET username from URL
-const { username, room } = Qs.parse(location.search, {
-  ignoreQueryPrefix: true,
-});
+// const { username, room } = Qs.parse(location.search, {
+//   ignoreQueryPrefix: true,
+// });
+
+// TODO: Get user name from URL using Qs or other feature
+const zzz = window.location.pathname;
+
+const username = 'testuser';
+const room = 'testRoom';
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
@@ -25,16 +30,6 @@ socket.on('message', (message) => {
 
 socket.on('roomUsers', ({ room, users }) => {
   outputRoomUsers(users);
-});
-
-chatForm.addEventListener('submit', (e: InputEvent) => {
-  e.preventDefault();
-  const msg = e.currentTarget.value;
-
-  // Send message to server
-  socket.emit('chatMessage', msg);
-  e.target.elements.msg.value = '';
-  e.target.elements.msg.focus();
 });
 
 // Output message to DOM

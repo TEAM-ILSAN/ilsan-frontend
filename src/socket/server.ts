@@ -1,7 +1,9 @@
+// const path = require('path');
+// const express, { Application } = require('express')
 import path from 'path';
 import express, { Application } from 'express';
-import { formatMessage, Message } from './utils/messages';
-import { User, userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
+import { formatMessage } from './utils/messages';
+import { userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
 import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from './types';
 
 import { createServer } from 'http';
@@ -11,11 +13,12 @@ const app: Application = express();
 const httpServer = createServer(app);
 
 const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(httpServer, {
-  /* options */
+  cors: {
+    origin: 'http://localhost:8080',
+    methods: ['GET', 'POST'],
+  },
 });
 
-// const server = http.createServer(app);
-// const io = socketio(server);
 const botName = 'ChatBot';
 
 // Set static folder
@@ -23,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Run when client connets
 io.on('connection', (socket) => {
-  socket.on('joinRoom', ({ username, room }: { username: string; room: string }) => {
+  socket.on('joinRoom', ({ username = '', room = '' }: { username: string; room: string }) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
