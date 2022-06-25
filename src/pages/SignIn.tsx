@@ -3,6 +3,8 @@ import StartingChatInput from '@/components/StartingChatInput';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 const isName = /^[가-힣]{2,30}$/;
+const isGender = /^(?:male|female)$/;
+
 // 카카오 로그인 cors error 해결 중인 관계로 일단 더미데이터로 구현합니다.
 const dummyRes = {
   user_info: {
@@ -26,19 +28,25 @@ const dummyRes = {
 };
 
 const SignIn = () => {
+  const [inputFocus, setInputFocus] = useState(0);
   const [name, setName] = useState({ value: dummyRes.user_info.properties.nickname, isValid: false });
+  const [gender, setGender] = useState({ value: dummyRes.user_info.kakao_account.gender || '', isValid: false });
 
   const changeValue = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
 
     if (id === 'name') {
       setName({ ...name, value });
+    } else if (id === 'gender') {
+      setGender({ ...gender, value });
     }
   };
 
   const changeIsValid = (id: string, isValid: boolean) => {
     if (id === 'name') {
       setName({ ...name, isValid });
+    } else if (id === 'gender') {
+      setGender({ ...gender, isValid });
     }
   };
 
@@ -50,6 +58,10 @@ const SignIn = () => {
     changeIsValid('name', verifyInput(isName, name.value));
   }, [name.value]);
 
+  useEffect(() => {
+    changeIsValid('gender', verifyInput(isGender, gender.value));
+  }, [gender.value]);
+
   return (
     <>
       <StartingChatInput
@@ -60,7 +72,15 @@ const SignIn = () => {
         isValid={name.isValid}
         onChange={changeValue}
       />
-      <Button text="다음" />
+      <StartingChatInput
+        id="gender"
+        value={gender.value}
+        title="성별"
+        placeHolder="성별"
+        isValid={gender.isValid}
+        onChange={changeValue}
+      />
+      <Button text="다음" isDisabled={!name.isValid} />
     </>
   );
 };
