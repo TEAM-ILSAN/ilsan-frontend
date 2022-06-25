@@ -2,35 +2,13 @@ import path from 'path';
 import express, { Application } from 'express';
 import { formatMessage, Message } from './utils/messages';
 import { User, userJoin, getCurrentUser, userLeave, getRoomUsers } from './utils/users';
+import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from './types';
 
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 
 const app: Application = express();
 const httpServer = createServer(app);
-
-interface ServerToClientEvents {
-  message: (message: Message) => void;
-  roomUsers: ({ room, users }: { room: string; users: User[] }) => void;
-}
-
-interface ClientToServerEvents {
-  message: (message: Message) => void;
-  joinRoom: ({ username, room }: { username: string; room: string }) => void;
-  chatMessage: (msg: string) => void;
-}
-
-interface InterServerEvents {
-  // MEMO: mock data
-  ping: () => void;
-}
-
-interface SocketData {
-  // MEMO: mock data
-  id: number;
-  name: string;
-  age: number;
-}
 
 const io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>(httpServer, {
   /* options */
