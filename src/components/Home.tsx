@@ -20,6 +20,7 @@ const Home = () => {
   const initialSnap = snapPoints.length - 1;
   const [snapIndex, setSnapIndex] = useState<number>(1);
   const { kakao } = window;
+
   // 접속한 위치의 위도와 경도를 저장 할 변수
   const [location, setLocation] = useState<ILocation>(null);
 

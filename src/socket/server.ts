@@ -27,8 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Run when client connets
 io.on('connection', (socket) => {
   socket.on('joinRoom', ({ username = '', room = '' }: { username: string; room: string }) => {
+    console.log('server joinRoom --');
     const user = userJoin(socket.id, username, room);
-
     socket.join(user.room);
 
     socket.emit('message', formatMessage(botName, 'Welcome to chatcord!'));
@@ -45,13 +45,14 @@ io.on('connection', (socket) => {
 
   // Listen for chat message
   socket.on('chatMessage', (msg: string) => {
+    console.log('server chatMessage --');
     const user = getCurrentUser(socket.id);
-
     // Send message to client side
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
   socket.on('disconnect', () => {
+    console.log('server disconnect --');
     const user = userLeave(socket.id);
     if (user) {
       io.to(user.room).emit('message', formatMessage(botName, `${user.username} has left the chat`));
