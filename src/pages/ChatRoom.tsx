@@ -10,11 +10,10 @@ import { ServerToClientEvents, ClientToServerEvents } from '../socket/types';
 import { Message } from '../socket/utils/messages';
 import { User } from '../socket/utils/users';
 
-const END_POINT = 'http://127.0.0.1:3000';
+const END_POINT = 'http://localhost:3000';
+const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(END_POINT);
 
 function ChatRoom() {
-  const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(END_POINT);
-
   const [inputVal, setInputVal] = useState('');
   const [receivedMessage, setReceivedMessage] = useState<Message>();
   const [roomUsers, setRoomUsers] = useState<User[]>([]);
@@ -28,17 +27,12 @@ function ChatRoom() {
   };
 
   useEffect(() => {
-    socket.on('connect', () => {
-      console.log('client connect -- socket.id', socket.id);
-    });
-
     socket.on('message', (data: Message) => {
-      console.log('client message --', data);
+      console.log('data', data);
       setReceivedMessage(data);
     });
 
     socket.on('roomUsers', ({ room, users }) => {
-      console.log('client roomUsers--');
       setRoomUsers(users);
     });
   }, []);
@@ -46,6 +40,10 @@ function ChatRoom() {
   const onJoinRoom = () => {
     const username = 'testuser';
     const room = 'testRoom';
+
+    socket.on('connect', () => {
+      console.log('client connect -- socket.id', socket.id);
+    });
 
     socket.emit('joinRoom', { username, room });
   };
