@@ -64,7 +64,7 @@ function ChatRoom() {
           <p>{receivedMessage?.text}</p>
           <p>{receivedMessage?.time}</p>
         </ChatWrapper>
-        {roomUsers.length > 0 && roomUsers.map((user) => <p>{user.username}</p>)}
+        {roomUsers.length > 0 && roomUsers.map((user) => <p key={user.id}>{user.username}</p>)}
         <ChatForm inputHandler={inputHandler} submitHandler={submitHandler} />
       </StyledChatRoom>
     </Layout>
