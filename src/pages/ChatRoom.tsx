@@ -32,7 +32,7 @@ function ChatRoom() {
       setReceivedMessage(data);
     });
 
-    socket.on('roomUsers', ({ room, users }) => {
+    socket.on('roomUsers', ({ room, users }: { room: string; users: User[] }) => {
       setRoomUsers(users);
     });
   }, []);
