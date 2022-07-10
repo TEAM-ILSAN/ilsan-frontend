@@ -11,12 +11,9 @@ import SignIn from './pages/SignIn';
 import MyPage from './pages/MyPage';
 import baseTheme from './styles/baseTheme';
 import GlobalStyles from './styles/globalStyles';
+import Playground from './pages/Playground';
 
 function RootWithCallbackAfterRender() {
-  useEffect(() => {
-    console.log('rendered');
-  });
-
   return (
     <React.Fragment>
       <ThemeProvider theme={baseTheme}>
@@ -30,6 +27,7 @@ function RootWithCallbackAfterRender() {
             <NavBar />
             <Routes>
               <Route path="/" element={<Main />} />
+              <Route path="playground" element={<Playground />} />
               <Route path="chatroom" element={<ChatRoom />} />
               <Route path="starting-chatroom" element={<ChatRoomDescription />} />
               <Route path="sign-in" element={<SignIn />} />
