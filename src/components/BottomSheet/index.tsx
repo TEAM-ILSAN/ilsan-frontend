@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 100;
   left: 0;
   right: 0;
   border-top-left-radius: 0.8rem;
