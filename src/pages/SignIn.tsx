@@ -1,8 +1,7 @@
 import Button from '@/components/Button';
-import StartingChatInput from '@/components/StartingChatInput';
 import styled from '@emotion/styled';
 import { ChangeEvent, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 
 const isName = /^[가-힣]{2,30}$/;
 const isGender = /^(?:male|female)$/;
@@ -32,8 +31,8 @@ const dummyRes = {
 };
 
 const SignIn = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const step = parseInt(searchParams.get('step'));
+  const navigate = useNavigate();
+  const { step } = useParams();
 
   const [name, setName] = useState({ value: dummyRes.user_info.properties.nickname, isValid: false });
   const [gender, setGender] = useState({ value: dummyRes.user_info.kakao_account.gender || '', isValid: false });
@@ -65,7 +64,7 @@ const SignIn = () => {
       return;
     }
 
-    setSearchParams({ step: `${number}` });
+    navigate(`${number}`);
   };
 
   useEffect(() => {
@@ -88,8 +87,8 @@ const SignIn = () => {
           );
         })}
       </StepContainer>
-      <InputContainer>
-        {step === 1 && (
+      {/* <InputContainer>
+        {step === '1' && (
           <StartingChatInput
             id="name"
             value={name.value}
@@ -99,7 +98,7 @@ const SignIn = () => {
             onChange={changeValue}
           />
         )}
-        {step === 2 && (
+        {step === '2' && (
           <StartingChatInput
             id="gender"
             value={gender.value}
@@ -109,7 +108,7 @@ const SignIn = () => {
             onChange={changeValue}
           />
         )}
-        {step === 3 && (
+        {step === '3' && (
           <StartingChatInput
             id="location"
             value={gender.value}
@@ -119,8 +118,9 @@ const SignIn = () => {
             onChange={changeValue}
           />
         )}
-      </InputContainer>
-      <Button text="다음" isDisabled={!name.isValid} onClick={() => goToStep(step + 1)} />
+      </InputContainer> */}
+      <Button text="다음" isDisabled={!name.isValid} onClick={() => goToStep(Number(step) + 1)} />
+      <Outlet />
     </>
   );
 };
