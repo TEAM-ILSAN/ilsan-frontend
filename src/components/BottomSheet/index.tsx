@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { MouseEventHandler } from 'react';
 import BottomSheetHeader from './BottomSheetHeader';
-import { BOTTOM_SHEET_HEIGHT } from '@/constants/components';
 import { useBottomSheet } from '@/hooks/useBottomSheet';
 
 interface BottomSheetProps {
@@ -34,7 +33,7 @@ const Wrapper = styled.div`
   border-top-right-radius: 0.8rem;
   background-color: #fff;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-  height: ${BOTTOM_SHEET_HEIGHT / 10}rem;
+  height: 100%;
 `;
 
 const BottomSheetContent = styled.div`

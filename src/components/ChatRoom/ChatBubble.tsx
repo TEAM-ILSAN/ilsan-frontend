@@ -2,24 +2,24 @@ import React, { PropsWithChildren, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import ChatEdgeLeftSvg from '@/assets/chatedge-left.svg';
 import ChatEdgeRightSvg from '@/assets/chatedge-right.svg';
-import { ChatBubbleEdgeType } from '@/constants/components';
+import { EdgeDirection } from '@/constants/common';
 
 const ChatBubble = ({
   children,
-  edgeLocation = ChatBubbleEdgeType.LEFT,
+  edgeLocation = EdgeDirection.LEFT,
 }: {
   children: ReactNode;
-  edgeLocation?: keyof typeof ChatBubbleEdgeType;
+  edgeLocation?: keyof typeof EdgeDirection;
 }): JSX.Element => {
   return (
     <StyledChatBubble>
       <ChatContent>{children}</ChatContent>
-      {edgeLocation === ChatBubbleEdgeType.LEFT && (
+      {edgeLocation === EdgeDirection.LEFT && (
         <ChatBubbleLeft>
           <ChatEdgeLeftSvg />
         </ChatBubbleLeft>
       )}
-      {edgeLocation === ChatBubbleEdgeType.RIGHT && (
+      {edgeLocation === EdgeDirection.RIGHT && (
         <ChatBubbleRight>
           <ChatEdgeRightSvg />
         </ChatBubbleRight>
