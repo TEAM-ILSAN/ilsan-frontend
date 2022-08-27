@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
 import styled from '@emotion/styled';
-import ChatEdgeLeftSvg from '@/assets/chatedge-left.svg';
-import ChatEdgeRightSvg from '@/assets/chatedge-right.svg';
+import ChatEdgeLeftSvg from '@/assets/icons/chatedge-left.svg';
+import ChatEdgeRightSvg from '@/assets/icons/chatedge-right.svg';
 import { EdgeDirection } from '@/constants/common';
 
 const ChatBubble = ({

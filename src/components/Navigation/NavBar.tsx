@@ -2,10 +2,10 @@ import React, { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-import HomeIcon from '@/assets/home.svg';
-import HamburgerIcon from '@/assets/hamburger.svg';
-import ChatIcon from '@/assets/chat.svg';
-import MyPageIcon from '@/assets/mypage.svg';
+import HomeIcon from '@/assets/icons/home.svg';
+import HamburgerIcon from '@/assets/icons/hamburger.svg';
+import ChatIcon from '@/assets/icons/chat.svg';
+import MyPageIcon from '@/assets/icons/mypage.svg';
 
 const NavBar = (): JSX.Element => {
   return (

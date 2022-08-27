@@ -3,11 +3,15 @@ import { MouseEventHandler } from 'react';
 import styled from '@emotion/styled';
 
 interface CategoryCardProps extends CategoryItem {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-const CategoryCard = ({ name, color }: CategoryCardProps) => {
-  return <CategoryCardContainer color={color}>{name}</CategoryCardContainer>;
+const CategoryCard = ({ name, color, onClick }: CategoryCardProps) => {
+  return (
+    <CategoryCardContainer color={color} onClick={onClick}>
+      {name}
+    </CategoryCardContainer>
+  );
 };
 
 const CategoryCardContainer = styled.div`

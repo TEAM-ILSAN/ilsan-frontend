@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 import { MouseEventHandler } from 'react';
-import IconCategoryCoffee from '@/assets/category-coffee.svg';
 import { CategoryItem } from '@/types/category';
+import { DynamicIcon } from '@/components/common';
 
 interface CategoryBadgeProps extends CategoryItem {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const CategoryBadge = ({ color, onClick }: CategoryBadgeProps) => {
+const CategoryBadge = ({ color, label, onClick }: CategoryBadgeProps) => {
   return (
     <CategoryBadgeContainer color={color} onClick={onClick}>
-      <IconCategoryCoffee />
+      <DynamicIcon iconName={label} />
       <TintedBackground color={color} />
     </CategoryBadgeContainer>
   );

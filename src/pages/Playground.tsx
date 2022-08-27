@@ -22,12 +22,12 @@ function Playground() {
       <BottomSheet isDisabled={false} onClick={onClickBottomSheet} />
       <CommonSubtitle>Category Badge</CommonSubtitle>
       {categoryList.map((item) => (
-        <CategoryBadge key={item.id} name={item.name} label={item.name} color={item.color} />
+        <CategoryBadge key={item.id} name={item.name} label={item.label} color={item.color} />
       ))}
 
       <CommonSubtitle>Category Card</CommonSubtitle>
       {categoryList.map((item) => (
-        <CategoryCard key={item.id} name={item.name} label={item.name} color={item.color} />
+        <CategoryCard key={item.id} name={item.name} label={item.label} color={item.color} />
       ))}
     </Layout>
   );
