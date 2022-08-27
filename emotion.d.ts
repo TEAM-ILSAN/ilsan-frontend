@@ -1,4 +1,5 @@
 import '@emotion/react';
+import { UrlWithStringQuery } from 'url';
 
 declare module '@emotion/react' {
   export interface Theme {
@@ -29,6 +30,17 @@ declare module '@emotion/react' {
       size84: string;
       size88: string;
       size136: string;
+    };
+    zIndexes: {
+      default: number;
+      floor: number;
+      cloud: number;
+      space: number;
+    };
+    borderRadiuses: {
+      small: string;
+      large: string;
+      circle: string;
     };
   }
 }

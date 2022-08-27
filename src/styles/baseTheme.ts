@@ -29,8 +29,23 @@ const gutter = {
   size136: '13.6rem',
 };
 
+const zIndexes = {
+  default: 1,
+  floor: 10,
+  cloud: 100,
+  space: 1000,
+};
+
+const borderRadiuses = {
+  small: '0.2rem',
+  large: '0.4rem',
+  circle: '100%',
+};
+
 export default {
   font,
   color,
   gutter,
+  zIndexes,
+  borderRadiuses,
 };

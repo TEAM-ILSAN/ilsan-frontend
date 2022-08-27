@@ -13,7 +13,7 @@ function Playground() {
 
   const categoryList = [
     { id: 1, name: '커피챗', label: 'coffee-chat', color: '#B573D4' },
-    { id: 2, name: '운동', label: 'workout', color: '#FE8189' },
+    { id: 2, name: '운동', label: 'workout', color: '#ca7373' },
   ];
 
   return (
