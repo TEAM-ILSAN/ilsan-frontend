@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { EdgeDirection } from '@/constants/common';
 import ChatProfileImg from '@/components/ChatRoom/ChatProfileImg';
 import ChatBubble from '@/components/ChatRoom/ChatBubble';
-
+import { gutter } from '@/styles/theme';
 interface ChatRoomRowProps {
   imgAlt?: string;
   imgSrc?: string;
@@ -26,11 +26,11 @@ const ChatRoomRow = ({ children, imgSrc, isMyChat }: PropsWithChildren<ChatRoomR
 
 const StyledChatRoomRow = styled.div<{ isMyChat: boolean }>`
   display: flex;
-  padding: ${({ theme }) => theme.gutter.size16};
+  padding: ${gutter.size16};
   ${({ isMyChat }) => isMyChat && 'justify-content: flex-end'};
 
   > img {
-    margin-right: ${({ theme }) => theme.gutter.size8};
+    margin-right: ${gutter.size8};
   }
 `;
 

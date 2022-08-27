@@ -43,10 +43,4 @@ const borderRadiuses = {
   circle: '100%',
 };
 
-export default {
-  font,
-  color,
-  gutter,
-  zIndexes,
-  borderRadiuses,
-};
+export { font, color, gutter, zIndexes, borderRadiuses };

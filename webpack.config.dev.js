@@ -55,6 +55,7 @@ module.exports = {
       '@/atoms': path.resolve(__dirname, 'src/atoms/'),
       '@/utils': path.resolve(__dirname, 'src/utils/'),
       '@/constants': path.resolve(__dirname, 'src/constants/'),
+      '@/styles': path.resolve(__dirname, 'src/styles/'),
       '@/assets': path.resolve(__dirname, 'public/assets/'),
     },
   },

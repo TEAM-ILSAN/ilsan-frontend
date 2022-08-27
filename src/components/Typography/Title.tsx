@@ -1,5 +1,6 @@
 import { ReactChild } from 'react';
 import styled from '@emotion/styled';
+import { font } from '@/styles/theme';
 
 const Title = ({ children }: { children: ReactChild }): JSX.Element => {
   return <StyledTitle>{children}</StyledTitle>;
@@ -7,7 +8,7 @@ const Title = ({ children }: { children: ReactChild }): JSX.Element => {
 
 // TODO: 실제 사용되는 타이틀 사이즈, 스타일로 변경
 const StyledTitle = styled.div`
-  font-size: ${({ theme }) => theme.font.size22};
+  font-size: ${font.size22};
 `;
 
 export default Title;

@@ -19,6 +19,7 @@
       "@/atoms/*": ["src/atoms/*"],
       "@/utils/*": ["src/utils/*"],
       "@/constants/*": ["src/constants/*"],
+      "@/styles/*": ["src/styles/*"],
       "@/assets/*": ["public/assets/*"]
     }
   }

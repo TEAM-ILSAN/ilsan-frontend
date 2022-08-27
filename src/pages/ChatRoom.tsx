@@ -9,6 +9,7 @@ import { io, Socket } from 'socket.io-client';
 import { ServerToClientEvents, ClientToServerEvents } from '../socket/types';
 import { Message } from '../socket/utils/messages';
 import { User } from '../socket/utils/users';
+import { color } from '@/styles/theme';
 
 const END_POINT = 'http://localhost:3000';
 const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(END_POINT);
@@ -75,7 +76,7 @@ const StyledChatRoom = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.color.primary};
+  background-color: ${color.primary};
   height: 100%;
 `;
 

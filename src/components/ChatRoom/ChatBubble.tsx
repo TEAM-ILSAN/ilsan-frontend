@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import ChatEdgeLeftSvg from '@/assets/icons/chatedge-left.svg';
 import ChatEdgeRightSvg from '@/assets/icons/chatedge-right.svg';
+import { font, gutter, color } from '@/styles/theme';
 import { EdgeDirection } from '@/constants/common';
 
 const ChatBubble = ({
@@ -36,10 +37,10 @@ const StyledChatBubble = styled.div`
 
 const ChatContent = styled.p`
   display: flex;
-  font-size: ${({ theme }) => theme.font.size16};
-  background-color: ${({ theme }) => theme.color.white};
+  font-size: ${font.size16};
+  background-color: ${color.white};
   border-radius: 0.6rem;
-  padding: ${({ theme }) => theme.gutter.size8};
+  padding: ${gutter.size8};
 `;
 
 const ChatBubbleLeft = styled.div`

@@ -6,6 +6,7 @@ import HomeIcon from '@/assets/icons/home.svg';
 import HamburgerIcon from '@/assets/icons/hamburger.svg';
 import ChatIcon from '@/assets/icons/chat.svg';
 import MyPageIcon from '@/assets/icons/mypage.svg';
+import { gutter, color } from '@/styles/theme';
 
 const NavBar = (): JSX.Element => {
   return (
@@ -31,10 +32,10 @@ const StyledNavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.gutter.size16};
+  padding: ${gutter.size16};
   width: 100%;
   height: 6rem;
-  background-color: ${({ theme }) => theme.color.darkgrey};
+  background-color: ${color.darkgrey};
 `;
 
 export default NavBar;

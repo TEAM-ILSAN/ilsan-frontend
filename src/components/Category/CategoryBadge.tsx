@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { MouseEventHandler } from 'react';
 import { CategoryItem } from '@/types/category';
 import { DynamicIcon } from '@/components/common';
+import { zIndexes, borderRadiuses } from '@/styles/theme';
 
 interface CategoryBadgeProps extends CategoryItem {
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -27,10 +28,10 @@ const CategoryBadgeContainer = styled.button<{ color: string }>`
 
   width: 5rem;
   height: 5rem;
-  border-radius: ${({ theme }) => theme.borderRadiuses.circle};
+  border-radius: ${borderRadiuses.circle};
 
   > svg {
-    z-index: ${({ theme }) => theme.zIndexes.default};
+    z-index: ${zIndexes.default};
 
     path {
       fill: ${({ color }) => color};
