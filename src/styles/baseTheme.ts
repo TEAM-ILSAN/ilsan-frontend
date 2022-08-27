@@ -9,6 +9,7 @@ const color = {
   primary: '#A9ECE0',
   white: '#FFF',
   black: '#000',
+  lightgrey: '#F6F6F6',
   darkgrey: '#605A5A',
 };
 

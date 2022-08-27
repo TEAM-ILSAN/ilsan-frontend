@@ -27,7 +27,7 @@ const CategoryCardContainer = styled.div<{ color: string }>`
   height: 8rem;
   border: 0.2rem solid ${({ color }) => color};
   border-radius: ${({ theme }) => theme.borderRadiuses.large};
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.lightgrey};
   color: ${({ color }) => color};
 `;
 

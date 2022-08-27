@@ -13,6 +13,7 @@ declare module '@emotion/react' {
       primary: string;
       white: string;
       black: string;
+      lightgrey: string;
       darkgrey: string;
     };
     gutter: {
