@@ -6,6 +6,7 @@ import { ChangeEvent, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Layout } from '@/components/common';
 import { Input } from '@/components/common';
+import styled from '@emotion/styled';
 
 const categories = [
   '커피챗',
