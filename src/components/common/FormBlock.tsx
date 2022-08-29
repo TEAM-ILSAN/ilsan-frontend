@@ -20,9 +20,9 @@ export default FormBlock;
 const FormBlockContainer = styled.div`
   padding: ${gutter.size12};
   border: 0.1rem solid ${color.white};
-  background-color: ${color.white};
-  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.7);
 `;
+
 const BlockTitle = styled.h2`
   font-size: ${font.size14};
   font-weight: normal;

@@ -8,17 +8,14 @@ const Button = ({ children }: { children: ReactNode }) => {
 
 export default Button;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.button`
   padding: ${gutter.size8};
   background-color: ${color.white};
   color: ${color.black};
   font-size: ${font.size14};
-
-  &:hover {
-    background-color: ${color.white};
-  }
+  border-radius: 0.4rem;
 
   &:active {
-    background-color: ${color.grey};
+    background-color: ${color.lightgrey};
   }
 `;
