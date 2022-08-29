@@ -5,9 +5,10 @@ import { MouseEvent } from 'react';
 import CategoryBadge from '@/components/Category/CategoryBadge';
 import CategoryCard from '@/components/Category/CategoryCard';
 import FormBlock from '@/components/common/FormBlock';
-import Button from '@/components/common/Button';
+import BaseButton from '@/components/common/BaseButton';
 import styled from '@emotion/styled';
 import { font, gutter } from '@/styles/theme';
+import BottomButton from '@/components/common/BottomButton';
 
 function Playground() {
   const onClickBottomSheet = (event: MouseEvent<HTMLElement>) => {
@@ -19,6 +20,10 @@ function Playground() {
     { id: 2, name: '운동', label: 'workout', color: '#ca7373' },
     { id: 3, name: '산책', label: 'walk', color: '#57C068' },
   ];
+
+  const onClickBaseButton = (event: MouseEvent<HTMLButtonElement>) => {
+    console.log('onClickBaseButton', event);
+  };
 
   return (
     <Layout>
@@ -41,10 +46,11 @@ function Playground() {
       <PlaygroundSubtitle>Form Block</PlaygroundSubtitle>
       <FormBlock title="언제 모이나요?">
         <ButtonGroup>
-          <Button>오늘</Button>
-          <Button>내일</Button>
+          <BaseButton onClick={onClickBaseButton}>오늘</BaseButton>
+          <BaseButton onClick={onClickBaseButton}>내일</BaseButton>
         </ButtonGroup>
       </FormBlock>
+      <BottomButton text="다음" onClick={onClickBaseButton} />
     </Layout>
   );
 }
