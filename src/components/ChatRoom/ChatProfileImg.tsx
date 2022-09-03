@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 const ChatProfileImg = ({ alt, src }: { alt: string; src: string }): JSX.Element => {

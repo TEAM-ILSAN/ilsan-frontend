@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { EdgeDirection } from '@/constants/common';
 import ChatProfileImg from '@/components/ChatRoom/ChatProfileImg';

@@ -1,4 +1,3 @@
-import React from 'react';
 import CommonTitle from '@/components/Typography/Title';
 import Layout from '@/components/Layout';
 

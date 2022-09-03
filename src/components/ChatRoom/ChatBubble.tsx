@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import ChatEdgeLeftSvg from '@/assets/icons/chatedge-left.svg';
 import ChatEdgeRightSvg from '@/assets/icons/chatedge-right.svg';

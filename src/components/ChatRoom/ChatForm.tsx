@@ -1,4 +1,4 @@
-import React, { FormEventHandler } from 'react';
+import { FormEventHandler } from 'react';
 import styled from '@emotion/styled';
 import SendIcon from '@/assets/icons/send.svg';
 
