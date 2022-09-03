@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js",
     "start": "webpack serve --config webpack.config.dev.js --mode development",
-    "server": "ts-node ./src/socket/server.ts",
-    "dev:server": "node-dev ./src/socket/server.ts"
+    "api": "ts-node ./src/socket/server.ts",
+    "api:dev": "node-dev ./src/socket/server.ts"
   },
   "keywords": [],
   "author": "",
