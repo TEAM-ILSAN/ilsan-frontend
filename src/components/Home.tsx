@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, ForwardRefExoticComponent } from 'react';
+import { useEffect, useState } from 'react';
 import Sheet, { SheetRef } from 'react-modal-sheet';
 import styled from '@emotion/styled';
 import BaseLayer from './BaseLayer';

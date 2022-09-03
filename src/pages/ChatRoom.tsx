@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import CommonTitle from '@/components/Typography/Title';
 import ChatRoomRow from '@/components/ChatRoom/ChatRoomRow';
