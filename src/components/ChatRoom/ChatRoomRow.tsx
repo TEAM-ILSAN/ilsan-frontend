@@ -4,6 +4,7 @@ import { EdgeDirection } from '@/constants/common';
 import ChatProfileImg from '@/components/ChatRoom/ChatProfileImg';
 import ChatBubble from '@/components/ChatRoom/ChatBubble';
 import { gutter } from '@/styles/theme';
+
 interface ChatRoomRowProps {
   imgAlt?: string;
   imgSrc?: string;
