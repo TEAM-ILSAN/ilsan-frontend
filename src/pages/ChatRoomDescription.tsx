@@ -1,11 +1,11 @@
 import modalListAtom from '@/atoms/modalList/atom';
 import ModalPortal from '@/components/ModalPortal';
 import SelectableModal from '@/components/ModalPortal/SelectableModal';
-import StartingChatInput from '@/components/StartingChatInput';
 import useModal from '@/hooks/useModal';
 import { ChangeEvent, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import Layout from '@/components/Layout';
+import { Input } from '@/components/common';
 
 const categories = [
   '커피챗',
@@ -46,7 +46,7 @@ const ChatRoomDescription = () => {
 
   return (
     <Layout>
-      <StartingChatInput
+      <Input
         id="category"
         value={inputs.category}
         title="주제"
@@ -54,8 +54,8 @@ const ChatRoomDescription = () => {
         isSelectable
         onClick={showSelectableModal}
       />
-      <StartingChatInput id="name" value={inputs.name} title="방 이름" placeHolder="방 이름" onChange={changeInput} />
-      <StartingChatInput
+      <Input id="name" value={inputs.name} title="방 이름" placeHolder="방 이름" onChange={changeInput} />
+      <Input
         id="description"
         value={inputs.description}
         title="방 설명"

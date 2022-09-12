@@ -1,7 +1,7 @@
 import { isGender } from '@/constants/common';
 import { verifyInput } from '@/utils/verifyInput';
 import { ChangeEvent, useEffect, useState } from 'react';
-import StartingChatInput from '../StartingChatInput';
+import { Input } from '../common';
 import { userInfoMock } from './__mocks__/userInfoMock';
 
 const Gender = () => {
@@ -22,7 +22,7 @@ const Gender = () => {
   }, [gender.value]);
 
   return (
-    <StartingChatInput
+    <Input
       id="gender"
       value={gender.value}
       title="성별"
