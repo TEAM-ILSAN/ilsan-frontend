@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ChangeEventHandler, MouseEventHandler, useEffect, useRef } from 'react';
 
-interface StartingChatInputProps {
+interface InputProps {
   type?: string;
   id: string;
   value: string;
@@ -15,12 +15,7 @@ interface StartingChatInputProps {
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-interface StyledInputProps {
-  isSelectable?: boolean;
-  isValid?: boolean;
-}
-
-const StartingChatInput = ({
+const Input = ({
   type = 'text',
   id,
   value,
@@ -32,7 +27,7 @@ const StartingChatInput = ({
   isFocused,
   onClick,
   onChange,
-}: StartingChatInputProps) => {
+}: InputProps) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +38,7 @@ const StartingChatInput = ({
 
   return (
     <Container>
-      <Input
+      <StyledInput
         ref={inputRef}
         type={type}
         id={id}
@@ -60,14 +55,17 @@ const StartingChatInput = ({
   );
 };
 
-export default StartingChatInput;
+export default Input;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
 `;
 
-const Input = styled.input<StyledInputProps>`
+const StyledInput = styled.input<{
+    isSelectable?: boolean;
+    isValid?: boolean;
+  }>`
   border: 1px solid ${({ isValid }) => (isValid ? 'blue' : 'red')};
   cursor: ${({ isSelectable }) => (isSelectable ? 'pointer' : 'text')};
   :focus {

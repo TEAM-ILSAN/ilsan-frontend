@@ -1,3 +1,4 @@
-import DynamicIcon from '@/components/common/DynamicIcon';
+import DynamicIcon from './DynamicIcon';
+import Input from './Input';
 
-export { DynamicIcon };
+export { DynamicIcon, Input };

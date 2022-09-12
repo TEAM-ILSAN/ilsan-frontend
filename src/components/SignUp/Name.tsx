@@ -1,7 +1,7 @@
 import { isName } from '@/constants/common';
 import { verifyInput } from '@/utils/verifyInput';
 import { ChangeEvent, useEffect, useState } from 'react';
-import StartingChatInput from '../StartingChatInput';
+import { Input } from '../common';
 import { userInfoMock } from './__mocks__/userInfoMock';
 
 const Name = () => {
@@ -22,7 +22,7 @@ const Name = () => {
   }, [name.value]);
 
   return (
-    <StartingChatInput
+    <Input
       id="name"
       value={name.value}
       title="이름"
