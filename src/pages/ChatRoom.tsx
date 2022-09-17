@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import CommonTitle from '@/components/Typography/Title';
 import ChatRoomRow from '@/components/ChatRoom/ChatRoomRow';
-import Layout from '@/components/Layout';
+import { Layout } from '@/components/common';
 import ChatForm from '@/components/ChatRoom/ChatForm';
 
 import { io, Socket } from 'socket.io-client';
@@ -66,7 +66,9 @@ function ChatRoom() {
           <p>{receivedMessage?.time}</p>
         </ChatWrapper>
         {roomUsers.length > 0 && roomUsers.map((user) => <p key={user.id}>{user.username}</p>)}
-        <ChatForm inputHandler={inputHandler} submitHandler={submitHandler} />
+        <ChatFormWrapper>
+          <ChatForm inputHandler={inputHandler} submitHandler={submitHandler} />
+        </ChatFormWrapper>
       </StyledChatRoom>
     </Layout>
   );
@@ -77,7 +79,11 @@ const StyledChatRoom = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background-color: ${color.primary};
-  height: 100%;
+`;
+
+const ChatFormWrapper = styled.div`
+  position: fixed;
+  bottom: 8rem;
 `;
 
 const ChatWrapper = styled.div``;

@@ -30,7 +30,7 @@ const AbsoluteButton = styled.button`
 `;
 
 const ChatInput = styled.input`
-  width: 100%;
+  width: calc(100vw - 3.5rem);
   height: 6rem;
   border: none;
   border-radius: 3rem;

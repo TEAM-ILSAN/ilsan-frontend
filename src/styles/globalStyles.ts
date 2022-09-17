@@ -6,14 +6,12 @@ export const GlobalStyles = `
   }
 
   html {
-    min-height: 100%;
     font-size: 62.5%;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
 
   body {
-    min-height: 100%;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1em;

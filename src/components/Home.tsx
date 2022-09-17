@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import Sheet, { SheetRef } from 'react-modal-sheet';
 import styled from '@emotion/styled';
 import BaseLayer from './BaseLayer';
-
+import Layout from '@/components/common/Layout';
 declare global {
   interface Window {
     kakao: any;
@@ -38,63 +37,31 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    getMyGps();
-    mapDrawer();
-  }, []);
+  // useEffect(() => {
+  //   getMyGps();
+  //   mapDrawer();
+  // }, []);
 
-  useEffect(() => {
-    const { kakao } = window;
-    if (location !== null) {
-      const container = document.getElementById('myMap');
-      const options = {
-        center: new kakao.maps.LatLng(location.latitude, location.longitude),
-        level: 3,
-      };
-      const map = new kakao.maps.Map(container, options);
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   const { kakao } = window;
+  //   if (location !== null) {
+  //     const container = document.getElementById('myMap');
+  //     const options = {
+  //       center: new kakao.maps.LatLng(location.latitude, location.longitude),
+  //       level: 3,
+  //     };
+  //     const map = new kakao.maps.Map(container, options);
+  //   }
+  // }, [location]);
 
   return (
-    <Container>
+    <Layout>
       <BaseLayer />
-      <ParentSheet
-        isOpen={isOpen}
-        onClose={() => setIsOpen(true)}
-        snapPoints={snapPoints}
-        initialSnap={initialSnap}
-        onSnap={(snapIndex) => setSnapIndex(snapIndex)}
-      >
-        <Sheet.Container>
-          <Sheet.Header>
-            <HeaderText>현재 카테고리 : 모두</HeaderText>
-          </Sheet.Header>
-          <Sheet.Content>
-            <div
-              id="myMap"
-              style={{
-                width: '100%',
-                height: '45rem',
-              }}
-            ></div>
-          </Sheet.Content>
-        </Sheet.Container>
-      </ParentSheet>
-    </Container>
+    </Layout>
   );
 };
 
 export default Home;
-
-const ParentSheet = styled(Sheet)`
-  z-index: 900 !important;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  background: #ddd;
-  height: 100vh;
-`;
 
 const HeaderText = styled.div`
   padding: 1.2rem 3rem;

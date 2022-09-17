@@ -4,7 +4,7 @@ import SelectableModal from '@/components/ModalPortal/SelectableModal';
 import useModal from '@/hooks/useModal';
 import { ChangeEvent, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import Layout from '@/components/Layout';
+import { Layout } from '@/components/common';
 import { Input } from '@/components/common';
 
 const categories = [
@@ -46,14 +46,7 @@ const ChatRoomDescription = () => {
 
   return (
     <Layout>
-      <Input
-        id="category"
-        value={inputs.category}
-        title="주제"
-        readOnly
-        isSelectable
-        onClick={showSelectableModal}
-      />
+      <Input id="category" value={inputs.category} title="주제" readOnly isSelectable onClick={showSelectableModal} />
       <Input id="name" value={inputs.name} title="방 이름" placeHolder="방 이름" onChange={changeInput} />
       <Input
         id="description"
