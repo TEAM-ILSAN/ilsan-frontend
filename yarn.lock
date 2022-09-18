@@ -2867,7 +2867,7 @@
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
   "version" "0.2.0"
 
-"framer-motion@^4.1.17", "framer-motion@2.x || 3.x || 4.x || 5.x || 6.x":
+"framer-motion@^4.1.17", "framer-motion@>=2":
   "integrity" "sha512-thx1wvKzblzbs0XaK2X0G1JuwIdARcoNOW7VVwjO8BUltzXPyONGAElLu6CiCScsOQRI7FIk/45YTFtJw5Yozw=="
   "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-4.1.17.tgz"
   "version" "4.1.17"
@@ -4044,10 +4044,10 @@
   "resolved" "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-1.1.0.tgz"
   "version" "1.1.0"
 
-"react-modal-sheet@^1.5.1":
-  "integrity" "sha512-3StI5MoYH/LZTK6ozUrYMfEtHJGd/niuNLAH44ihXqxNSihceANfEFB8ZpSxHKkuMXIBwrtMf9xPd1oROhZzuQ=="
-  "resolved" "https://registry.npmjs.org/react-modal-sheet/-/react-modal-sheet-1.5.1.tgz"
-  "version" "1.5.1"
+"react-modal-sheet@^1.5.2":
+  "integrity" "sha512-zFwqBgyudRhMJfSbomZggrTdJLcTGx9zSVFdM8bSENuWhMJp3oy+W5kYOl6+KESV3AqrUHj3crUzB/5laHW97w=="
+  "resolved" "https://registry.npmjs.org/react-modal-sheet/-/react-modal-sheet-1.5.2.tgz"
+  "version" "1.5.2"
   dependencies:
     "react-merge-refs" "1.1.0"
 
