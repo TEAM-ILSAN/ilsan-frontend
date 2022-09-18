@@ -1,4 +1,7 @@
 const font = {
+  size12: '1.2rem',
+  size13: '1.3rem',
+  size14: '1.4rem',
   size16: '1.6rem',
   size18: '1.8rem',
   size22: '2.2rem',
@@ -10,7 +13,8 @@ const color = {
   white: '#FFF',
   black: '#000',
   lightgrey: '#F6F6F6',
-  darkgrey: '#605A5A',
+  grey: '#605A5A',
+  darkgrey: '#35393F',
 };
 
 const gutter = {

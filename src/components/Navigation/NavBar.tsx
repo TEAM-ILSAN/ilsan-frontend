@@ -26,7 +26,7 @@ const NavBar = (): JSX.Element => {
 
 const StyledNavBar = styled.div`
   z-index: 1000;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: space-between;
