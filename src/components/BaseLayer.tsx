@@ -5,7 +5,7 @@ function BaseLayer() {
     <Container>
       <Title>지금 모일 수 있는 곳</Title>
       <ChatList>
-        {[1, 2, 3, 4, 5, 6].map((el, idx) => {
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((el, idx) => {
           return <ChatBox key={idx}></ChatBox>;
         })}
       </ChatList>
@@ -30,6 +30,7 @@ const ChatList = styled.div``;
 
 const ChatBox = styled.div`
   padding: 15px;
-  background: #fff;
+  height: 4rem;
+  background: #919191;
   margin-bottom: 20px;
 `;

@@ -1,5 +1,5 @@
 import { CommonTitle, CommonSubtitle } from '@/components/Typography';
-import Layout from '@/components/Layout';
+import { Layout } from '@/components/common';
 import BottomSheet from '@/components/BottomSheet';
 import { MouseEvent } from 'react';
 import CategoryBadge from '@/components/Category/CategoryBadge';

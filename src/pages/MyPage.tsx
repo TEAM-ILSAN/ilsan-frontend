@@ -1,5 +1,5 @@
 import CommonTitle from '@/components/Typography/Title';
-import Layout from '@/components/Layout';
+import { Layout } from '@/components/common';
 
 function MyPage() {
   return (
