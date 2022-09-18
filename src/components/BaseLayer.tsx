@@ -30,7 +30,7 @@ const ChatList = styled.div``;
 
 const ChatBox = styled.div`
   padding: 15px;
-  height: 6rem;
+  height: 4rem;
   background: #919191;
   margin-bottom: 20px;
 `;
